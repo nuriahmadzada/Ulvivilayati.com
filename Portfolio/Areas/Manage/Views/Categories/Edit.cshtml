@@ -1,0 +1,35 @@
+﻿@model Portfolio.Models.Category
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="page">
+    <div id="room">
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fas fa-list"></i>Categories - Editing</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="@Url.Action("index", "categories", new { Area = "Manage"})" class="btn btn-primary">Back to Categories</a>
+                </div>
+            </div>
+        </div>
+
+        <form method="post" action="@Url.Action("edit", "categories", new { Area = "Manage"})">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="room-no">Category Name:</label>
+                    <input type="text" class="form-control" id="room-no" name="Name" value="@Model.Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+

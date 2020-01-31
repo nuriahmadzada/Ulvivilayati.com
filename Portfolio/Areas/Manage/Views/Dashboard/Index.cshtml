@@ -1,0 +1,39 @@
+﻿@model Portfolio.Models.Info
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page">
+    <div id="room">
+
+        <div class="header mb-4">
+            <div class="row">
+                <div class="col-6">
+                    <h1><i class="fas fa-home"></i>Home Page</h1>
+                </div>
+                <div class="col-6 text-right">
+                    <a href="@Url.Action("edit", "dashboard", new { Area = "Manage", Id = Model.Id})" class="btn btn-primary">Edit your Home Page</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><b>Name:</b> @Model.Name</h5>
+                <h5 class="card-title"><b>Title - 1:</b> @Model.TitleFirst</h5>
+                <h5 class="card-title"><b>Title - 2:</b> @Model.TitleSecond</h5>
+                <h5 class="card-title"><b>Title - 3:</b> @Model.TitleThird</h5>
+                <hr />
+                <h5 class="card-title"><b>Profile Photo:</b></h5>
+                <div class="card-text mb-4">
+                    <img src="~/Upload/@Model.ProfilePhoto" style="width: 150px;">
+                </div>
+
+                <h5 class="card-title"><b>Background Photo:</b></h5>
+                <div class="card-text">
+                    <img src="~/Upload/@Model.BgPhoto" style="width: 250px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

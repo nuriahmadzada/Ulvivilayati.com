@@ -1,0 +1,50 @@
+﻿@model List<Portfolio.Models.Photo>
+@{
+    ViewBag.Title = "Index";
+    int sira = 1;
+}
+
+<div class="page">
+    <div id="room">
+
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fas fa-images"></i>Photos</h1>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>№</th>
+                    <th>Project Name</th>
+                    <th>Photo</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+
+            <tbody style="background-color: lavender;">
+                @foreach (var items in Model)
+                {
+                    <tr>
+                        <td>
+                            @(sira++)
+                        </td>
+                        <td>
+                            @items.Project.Name
+                        </td>
+                        <td>
+                            <img width="100" src="~/Upload/@items.PhotoName" width="100"/>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("edit", "projects", new { Area = "Manage", Id = items.Id})" class="btn btn-info text-white edit">Edit</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

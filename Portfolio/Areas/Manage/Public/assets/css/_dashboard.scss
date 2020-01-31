@@ -1,0 +1,89 @@
+#dashboard {
+  padding: 20px 100px;
+
+  form {
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="date"] {
+      width: 262px;
+    }
+
+    input[type="number"] {
+      width: 130px;
+
+      &#child {
+        width: 120px;
+      }
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: rgb(223, 153, 48);
+      border: rgb(223, 153, 48);
+    }
+  }
+
+  table {
+    margin-top: 50px;
+    text-align: center;
+    align-items: center;
+    display: none;
+
+    tr{
+        &:hover{
+            cursor: pointer;
+        }
+        td{
+            vertical-align: middle;
+    
+            .photo {
+                width: 100%;
+                height: 100px;
+                overflow: hidden;
+          
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+    
+              .icon{
+                  width:45px;
+                  height:45px;
+                  margin:0 auto;
+                  img{
+                      width:100%;
+                      height:100%;
+                      
+                  }
+              }
+             
+          
+              p{
+                  font-weight: 300;
+                  margin-bottom: 0;
+              }
+              h6{
+                  font-weight: bold;
+                  font-size: 20px;
+
+                  &.price{
+                    background-color: rgb(109, 177, 6);
+                    color:white;
+                  }
+              }
+        }
+    }
+
+  
+   
+  }
+}

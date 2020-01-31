@@ -1,0 +1,81 @@
+﻿@model Portfolio.Models.Info
+@{
+    ViewBag.Title = "Edit";
+}
+
+ <div class="page">
+     <div id="room">
+         <div class="header mb-4">
+             <div class="row">
+                 <div class="col-6">
+                     <h1><i class="fas fa-home"></i>Home Page - Editing</h1>
+                 </div>
+                 <div class="col-6 text-right">
+                     <a href="@Url.Action("index", "dashboard", new { Area = "Manage"})" class="btn btn-primary">Back to Home Page</a>
+                 </div>
+             </div>
+         </div>
+
+         <form enctype="multipart/form-data" method="post" action="@Url.Action("edit","dashboard", new { Area="Manage"})">
+             <input type="hidden" name="Id" value="@Model.Id" />
+             <div class="col-md-12 d-flex">
+                 <div class="col-md-4">
+                     <div class="form-row">
+                         <div class="form-group col-md-8">
+                             <label for="room-no"><b>Profile Photo:</b></label>
+                             <input type="file" name="ProfilePhoto" class="form-control" id="room-no">
+                         </div>
+
+                         <div class="form-group col-md-5">
+                             <img src="~/Upload/@Model.ProfilePhoto" style="width: 150px;">
+                         </div>
+                     </div>
+
+                     <div class="form-row">
+                         <div class="form-group col-md-8">
+                             <label for="room-no"><b>Background Photo:</b></label>
+                             <input type="file" name="BgPhoto" class="form-control" id="room-no">
+                         </div>
+
+                         <div class="form-group col-md-5">
+                             <img src="~/Upload/@Model.BgPhoto" style="width: 250px;">
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="col-md-5">
+                     <div class="form-row">
+                         <div class="form-group col-md-12">
+                             <label for="room-no"><b>Name:</b></label>
+                             <input type="text" name="Name" class="form-control" id="room-no" value="@Model.Name" required>
+                         </div>
+
+                         <div class="form-group col-md-12">
+                             <label for="room-no"><b>Title - 1:</b></label>
+                             <input type="text" name="TitleFirst" class="form-control" id="room-no" value="@Model.TitleFirst" required>
+                         </div>
+
+                         <div class="form-group col-md-12">
+                             <label for="room-no"><b>Title - 2:</b></label>
+                             <input type="text" name="TitleSecond" class="form-control" id="room-no" value="@Model.TitleSecond" required>
+                         </div>
+
+                         <div class="form-group col-md-12">
+                             <label for="room-no"><b>Title - 3:</b></label>
+                             <input type="text" name="TitleThird" class="form-control" id="room-no" value="@Model.TitleThird">
+                         </div>
+
+                         <div class="form-group col-md-12">
+                             <div>
+                                 <button type="submit" class="btn btn-success" style="width: 150px; height: 50px;">Save</button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+
+         </form>
+     </div>
+    
+</div> 

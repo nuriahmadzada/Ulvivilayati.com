@@ -1,0 +1,151 @@
+﻿@{
+    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Vacancy :: Admin Panel</title>
+
+    <link rel="stylesheet" href="~/Areas/Manage/Public/assets/vendor/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="~/Areas/Manage/Public/assets/vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Areas/Manage/Public/assets/vendor/charts-c3/plugin.css" />
+    <link rel="stylesheet" href="~/Areas/Manage/Public/assets/vendor/jvectormap/jquery-jvectormap-2.0.3.css" />
+    <link rel="stylesheet" href="~/Areas/Manage/Public/assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="~/Areas/Manage/Public/assets/css/style.css" type="text/css">
+</head>
+
+<body class="theme-indigo">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="~/Areas/Manage/Public/assets/images/brand/icon_black.svg" width="48" height="48" alt="ArrOw"></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <nav class="navbar custom-navbar navbar-expand-lg py-2">
+        <div class="container-fluid px-0">
+            <a href="javascript:void(0);" class="menu_toggle"><i class="fa fa-align-left"></i></a>
+            <a href="index.html" class="navbar-brand">
+                <img src="~/Areas/Manage/Public/assets/images/brand/icon.svg" alt="BigBucket" />
+                <strong>Admin</strong> Panel
+            </a>
+            <div id="navbar_main">
+                <ul class="navbar-nav mr-auto hidden-xs">
+                    <li class="nav-item page-header">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("index", "dashboard", new { Area = "Manage"})"><i class="fa fa-home"></i></a></li>
+                            <li class="breadcrumb-item active">
+                                @{
+                                    switch (controllerName)
+                                    {
+                                        case "dashboard":
+                                            <span>Home</span>
+                                            break;
+
+                                        case "abouts":
+                                            <span>About Me</span>
+                                            break;
+
+                                        case "services":
+                                            <span>Services</span>
+                                            break;
+
+                                        case "facts":
+                                            <span>Fun Facts</span>
+                                            break;
+
+                                        case "educations":
+                                            <span>Education</span>
+                                            break;
+
+                                        case "experiences":
+                                            <span>Experience</span>
+                                            break;
+
+                                        case "skills":
+                                            <span>Skills</span>
+                                            break;
+
+                                        case "categories":
+                                            <span>Categories</span>
+                                            break;
+
+                                        case "projects":
+                                            <span>Projects</span>
+                                            break;
+
+                                        case "photos":
+                                            <span>Photos</span>
+                                            break;
+
+                                        default:
+                                            <span>Home</span>
+                                            break;
+                                    }
+                                }
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main_content" id="main-content">
+
+        <div class="left_sidebar">
+            <nav class="sidebar">
+                <div class="user-info">
+                    <div class="detail">
+                        <h5 class="mb-0">Ulvi Vilayati</h5>
+                        <small>Admin</small>
+                    </div>
+                </div>
+                <ul id="main-menu" class="metismenu">
+                    <li class="g_heading">Main</li>
+                    <li class="@(controllerName == "dashboard"?"active":"")"><a href="@Url.Action("index", "dashboard", new { Area = "Manage"})"><i class="fas fa-home"></i><span>Home</span></a></li>
+                    <li class="@(controllerName == "abouts"?"active":"")"><a href="@Url.Action("index", "abouts", new { Area = "Manage"})"><i class="fas fa-address-card"></i><span>About Me</span></a></li>
+                    <li class="@(controllerName == "services"?"active":"")"><a href="@Url.Action("index", "services", new { Area = "Manage"})"><i class="fas fa-user-cog"></i><span>Services</span></a></li>
+                    <li class="@(controllerName == "facts"?"active":"")"><a href="@Url.Action("index", "facts", new { Area = "Manage"})"><i class="far fa-grin-squint"></i><span>Fun Facts</span></a></li>
+
+                    <li class="g_heading">Resume</li>
+                    <li class="@(controllerName == "educations"?"active":"")"><a href="@Url.Action("index", "educations", new { Area = "Manage"})"><i class="fas fa-graduation-cap"></i><span>Education</span></a></li>
+                    <li class="@(controllerName == "experiences"?"active":"")"><a href="@Url.Action("index", "experiences", new { Area = "Manage"})"><i class="fas fa-keyboard"></i><span>Experience</span></a></li>
+                    <li class="@(controllerName == "skills"?"active":"")"><a href="@Url.Action("index", "skills", new { Area = "Manage"})"><i class="fas fa-align-left"></i><span>Skills</span></a></li>
+
+                    <li class="g_heading">Portfolio</li>
+                    <li class="@(controllerName == "categories"?"active":"")"><a href="@Url.Action("index", "categories", new { Area = "Manage"})"><i class="fas fa-list"></i><span>Categories</span></a></li>
+                    <li class="@(controllerName == "projects"?"active":"")"><a href="@Url.Action("index", "projects", new { Area = "Manage"})"><i class="fab fa-adobe"></i><span>Projects</span></a></li>
+                    <li class="@(controllerName == "photos"?"active":"")"><a href="@Url.Action("index", "photos", new { Area = "Manage"})"><i class="fas fa-images"></i><span>Photos</span></a></li>
+
+                </ul>
+                <div class="text-center" style="width: 100%; padding:15px;">
+                    <a href="@Url.Action("logout", "dashboard", new { Area = "Manage" })" class="btn btn-primary text-white" style="width: 70%;">Logout</a>
+                </div>
+
+            </nav>
+        </div>
+        @RenderBody()
+    </div>
+
+    <!-- Core -->
+    <script src="~/Areas/Manage/Public/assets/bundles/libscripts.bundle.js"></script>
+    <script src="~/Areas/Manage/Public/assets/bundles/vendorscripts.bundle.js"></script>
+
+    <script src="~/Areas/Manage/Public/assets/bundles/c3.bundle.js"></script>
+    <script src="~/Areas/Manage/Public/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+
+    <script src="~/Areas/Manage/Public/assets/js/theme.js"></script>
+    <script src="~/Areas/Manage/Public/assets/js/main.js"></script>
+    <script src="~/Areas/Manage/Public/assets/js/pages/index.js"></script>
+    <script src="~/Areas/Manage/Public/assets/js/pages/todo-js.js"></script>
+</body>
+</html>

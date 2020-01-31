@@ -1,0 +1,61 @@
+﻿@model List<Portfolio.Models.Fact>
+@{
+    ViewBag.Title = "Index";
+    int sira = 1;
+}
+
+<div class="page">
+    <div id="room">
+
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fas fa-grin-squint"></i>Fun Facts</h1>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <a href="@Url.Action("create", "facts", new { Area = "Manage"})" class="btn btn-success">Create new Fact</a>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Icon</th>
+                    <th>Title</th>
+                    <th>Count</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+
+            <tbody style="background-color: lavender;">
+                @foreach (var items in Model)
+                {
+                    <tr>
+                        <td>
+                            @(sira++)
+                        </td>
+                        <td>
+                            <div class="icon">
+                                <i class="@items.Icon"></i>
+                            </div>
+
+                        </td>
+                        <td>
+                            @items.Title
+                        </td>
+                        <td>
+                            @items.Count
+                        </td>
+                        <td>
+                            <a href="@Url.Action("edit", "facts", new { Area = "Manage", Id = items.Id})" class="btn btn-info text-white edit">Edit</a>
+                            <a onclick="return confirm('Are you sure want to remove the selected one?')" href="@Url.Action("remove", "facts", new { id = items.Id, Area = "Manage" })" class="btn btn-danger text-white">Remove</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

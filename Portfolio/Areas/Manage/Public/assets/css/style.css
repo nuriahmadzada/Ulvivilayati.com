@@ -1,0 +1,404 @@
+#dashboard {
+  padding: 20px 100px;
+}
+
+#dashboard form input[type="date"]::-webkit-inner-spin-button,
+#dashboard form input[type="date"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#dashboard form input[type="date"] {
+  width: 262px;
+}
+
+#dashboard form input[type="number"] {
+  width: 130px;
+}
+
+#dashboard form input[type="number"]#child {
+  width: 120px;
+}
+
+#dashboard form label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#dashboard form button {
+  background-color: #df9930;
+  border: #df9930;
+}
+
+#dashboard table {
+  margin-top: 50px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+#dashboard table tr:hover {
+  cursor: pointer;
+}
+
+#dashboard table tr td {
+  vertical-align: middle;
+}
+
+#dashboard table tr td .photo {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+#dashboard table tr td .photo img {
+  width: 100%;
+  height: 100%;
+}
+
+#dashboard table tr td .icon {
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+#dashboard table tr td .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+#dashboard table tr td p {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+#dashboard table tr td h6 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#dashboard table tr td h6.price {
+  background-color: #6db106;
+  color: white;
+}
+
+#room {
+  padding: 10px 50px;
+}
+
+#room .header {
+  margin-top: 40px;
+}
+
+#room .header h1 {
+  font-weight: bold;
+}
+
+#room .header h1 i {
+  margin-right: 25px;
+}
+
+#room .header button {
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* #room .header button.btn-primary {
+  display: none;
+} */
+
+#room table {
+  margin-top: 50px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#room table tr:hover {
+  cursor: pointer;
+}
+
+#room table tr td {
+  vertical-align: middle;
+}
+
+#room table tr td .photo {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+#room table tr td .photo img {
+  width: 100%;
+  height: 100%;
+}
+
+#room table tr td .icon {
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+#room table tr td .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+#room table tr td p {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+#room table tr td h6 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#room table tr td h6.price {
+  background-color: #6db106;
+  color: white;
+}
+
+#room table tr td button {
+  width: 90px;
+  margin: 5px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#room table tr td button.btn-status {
+  color: white;
+  background-color: #f3cf2d;
+}
+
+#room table tr td button.btn-status.active {
+  background-color: #24d424;
+}
+
+#room .create {
+  display: none;
+  padding: 50px 0;
+  width: 550px;
+}
+
+#room .editing {
+  display: none;
+    padding: 50px 0;
+    width: 550px;
+}
+
+#room .create form label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#room .create form input,
+#room .create form select {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+#room .create form textarea {
+  resize: none;
+}
+
+#room .create form input[id="price"]::-webkit-inner-spin-button,
+#room .create form input[id="price"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#room .create form button {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#room .editing form label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#room .editing form input,
+#room .editing form select {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+#room .editing form textarea {
+  resize: none;
+}
+
+#room .editing form input[id="price"]::-webkit-inner-spin-button,
+#room .editing form input[id="price"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#room .editing form button {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#customer {
+  padding: 10px 50px;
+}
+
+tbody tr td {
+  font-weight: bold;
+}
+
+.detail {
+  text-align: left;
+  padding: 10px 25px;
+}
+
+.details {
+  display: none;
+  margin-top: 15px;
+}
+
+#customer .header {
+  margin-top: 40px;
+}
+
+#customer .header h1 {
+  font-weight: bold;
+}
+
+#customer .header h1 i {
+  margin-right: 25px;
+}
+
+#customer .header button {
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#customer .header button.btn-primary {
+  display: none;
+}
+
+#customer table {
+  margin-top: 50px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#customer table tr:hover {
+  cursor: pointer;
+}
+
+#customer table tr td {
+  vertical-align: middle;
+}
+
+#customer table tr td .photo {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+#customer table tr td .photo img {
+  width: 100%;
+  height: 100%;
+}
+
+#customer table tr td .icon {
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+#customer table tr td .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+#customer table tr td p {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+#customer table tr td h6 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#customer table tr td h6.price {
+  background-color: #6db106;
+  color: white;
+}
+
+#customer table tr td button {
+  width: 90px;
+  margin: 5px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#customer table tr td button.btn-status {
+  color: white;
+  background-color: #f3cf2d;
+}
+
+#customer table tr td button.btn-status.active {
+  background-color: #24d424;
+}
+
+#customer .create {
+  display: none;
+  padding: 50px 0;
+  width: 400px;
+}
+
+#customer .create form label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#customer .create form input,
+#customer .create form select {
+  height: 40px;
+}
+
+#customer .create form textarea {
+  resize: none;
+}
+
+#customer .create form input[id="price"]::-webkit-inner-spin-button,
+#customer .create form input[id="price"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#customer .create form button {
+  text-align: center;
+  width: 40%;
+  height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+#customer .create form button.btn-status {
+  color: white;
+  background-color: #f3cf2d;
+}
+
+#customer .create form button.btn-status.active {
+  background-color: #24d424;
+}
+/*# sourceMappingURL=style.css.map */

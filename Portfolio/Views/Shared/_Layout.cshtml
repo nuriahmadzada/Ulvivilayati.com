@@ -1,0 +1,154 @@
+﻿@model Portfolio.ViewModel.ViewDatas
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Resume / CV </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Kerge - Resume / CV / vCard Template" />
+    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio" />
+    <meta name="author" content="lmpixels" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="~/Assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/css/animate.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/css/animations.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/css/main.css" type="text/css">
+
+    <script src="~/Assets/js/modernizr.custom.js"></script>
+</head>
+
+<body>
+    <!-- Loading animation -->
+    <div class="preloader">
+        <div class="preloader-animation">
+            <div class="preloader-spinner">
+            </div>
+        </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <div id="page" class="page">
+        <!-- Header -->
+        <header id="site_header" class="header mobile-menu-hide">
+            <div class="header-content clearfix">
+                <div class="my-photo">
+                    <img src="~/Upload/@Model.Info.ProfilePhoto" alt="image">
+                </div>
+
+                <div class="site-title-block">
+                    <div class="site-title">@Model.Info.Name</div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="site-nav">
+                    <!-- Main menu -->
+                    <ul id="nav" class="site-main-menu">
+                        <li>
+                            <a class="pt-trigger" href="#home">Home</a><!-- href value = data-id without # of .pt-page. -->
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#about-me">About Me</a>
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#resume">Resume</a>
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- /Main menu -->
+                </div>
+                <!-- Navigation -->
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <!-- / Social Links -->
+            </div>
+        </header>
+        <!-- /Header -->
+        <!-- Mobile Header -->
+        <div class="mobile-header mobile-visible">
+            <div class="mobile-logo-container">
+                <div class="mobile-header-image">
+                    <a href="#">
+                        <img src="~/Upload/@Model.Info.ProfilePhoto" alt="image">
+                    </a>
+                </div>
+                <div class="mobile-site-title"><a href="#">@Model.Info.Name</a></div>
+            </div>
+
+            <a class="menu-toggle mobile-visible">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <!-- /Mobile Header -->
+        <!-- Arrows Nav -->
+        <div class="lmpixels-arrows-nav">
+            <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
+            <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
+        </div>
+        <!-- /Arrows Nav -->
+        @RenderBody()
+    </div>
+
+    <script src="~/Assets/js/jquery-2.1.3.min.js"></script>
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+    <script src="~/Assets/js/pages-switcher.js"></script>
+    <script src="~/Assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Assets/js/validator.js"></script>
+    <script src="~/Assets/js/jquery.shuffle.min.js"></script>
+    <script src="~/Assets/js/masonry.pkgd.min.js"></script>
+    <script src="~/Assets/js/owl.carousel.min.js"></script>
+    <script src="~/Assets/js/jquery.magnific-popup.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="~/Assets/js/jquery.googlemap.js"></script>
+    <script src="~/Assets/js/main.js"></script>
+
+    <script>
+        $('.themodal').click(function () {
+
+            var id = $(this).attr('data-id');
+
+            var modale = $(".portfolio-grid").find(".page-ajax-loadedd[data-modal='" + id + "']");
+            modale.css("display", "block");
+
+        });
+        $('.the-close').click(function () {
+            var id = $(this).attr('data-id');
+            var modale = $(".portfolio-grid").find(".page-ajax-loadedd[data-modal='" + id + "']");
+            modale.css("display", "none");
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            $('.portfolio-page-carousel').owlCarousel({
+                smartSpeed: 1200,
+                items: 1,
+                loop: true,
+                dots: true,
+                nav: true,
+                navText: false,
+                margin: 10
+            });
+
+        });
+    </script>
+</body>
+
+</html>

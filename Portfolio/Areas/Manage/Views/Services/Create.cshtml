@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="page">
+    <div id="room">
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fas fa-user-cog"></i>Services - Create</h1>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <a href="@Url.Action("index", "services", new { Area = "Manage"})" class="btn btn-primary">Back to Service page</a>
+                </div>
+            </div>
+        </div>
+
+        <form action="@Url.Action("create", "services", new { Area = "Manage"})" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="room-no"><b>Icon</b></label>
+                    <input type="text" class="form-control" id="room-no" name="Icon" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="room-no"><b>Title</b></label>
+                    <input type="text" class="form-control" id="room-no" name="Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="ex"><b>Description</b></label>
+                    <textarea class="form-control" id="ex" name="Description" rows="7" placeholder="Write something here..." required></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success" style="width: 150px; height: 50px;">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

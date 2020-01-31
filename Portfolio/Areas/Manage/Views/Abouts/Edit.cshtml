@@ -1,0 +1,67 @@
+﻿@model Portfolio.Models.About
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="page">
+    <div id="room">
+         <div class="">
+
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fas fa-address-card"></i>About Me - Editing</h1>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="@Url.Action("index", "abouts", new { Area = "Manage"})" class="btn btn-primary">Back to About Page</a>
+                </div>
+            </div>
+        </div>
+
+        <form method="post"  action="@Url.Action("edit","abouts", new { Area="Manage"})">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="room-no"><b>Title</b></label>
+                    <input type="text" name="Title" class="form-control" id="room-no" value="@Model.Title" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="ex"><b>Description</b></label>
+                    <textarea class="form-control" id="ex" name="Description" rows="7" required>@Model.Description</textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="ex"><b>Birthday:</b></label>
+                    <input type="date" name="Birthday" class="form-control" id="room-no" value="@Model.Birthday.ToString("yyyy-MM-dd")" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="ex"><b>Residence:</b></label>
+                    <input type="text" name="Residence" class="form-control" id="room-no" value="@Model.Residence" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="ex"><b>E-mail:</b></label>
+                    <input type="email" class="form-control" id="room-no" name="Email" value="@Model.Email" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="ex"><b>Phone:</b></label>
+                    <input type="number" class="form-control" id="room-no" name="Phone" value="@Model.Phone" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="ex"><b>Behance:</b></label>
+                    <input type="text" class="form-control" id="room-no" name="Behance" value="@Model.Behance" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success" style="width: 150px; height: 50px;">Save</button>
+                </div>
+            </div>
+        </form>
+    </div> 
+    </div>
+</div>
+

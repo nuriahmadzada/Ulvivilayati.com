@@ -1,0 +1,43 @@
+﻿@model Portfolio.Models.Skill
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="page">
+    <div id="room">
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fas fa-align-left"></i>Skills - Editing</h1>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <a href="@Url.Action("index", "skills", new { Area = "Manage"})" class="btn btn-primary">Back to Skills page</a>
+                </div>
+            </div>
+        </div>
+
+        <form method="post" action="@Url.Action("edit", "skills", new { Area = "Manage"})">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="room-no"><b>Skill Name</b></label>
+                    <input type="text" class="form-control" id="room-no" name="Name" value="@Model.Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="room-no"><b>Degree</b></label>
+                    <input type="number" class="form-control" id="room-no" name="Percentage" value="@Model.Percentage" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success" style="width: 150px; height: 50px;">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,81 @@
+﻿@model List<Portfolio.Models.Project>
+@{
+    ViewBag.Title = "Index";
+    int sira = 1;
+}
+
+<div class="page">
+    <div id="room">
+
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fab fa-adobe"></i>Projects</h1>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <a href="@Url.Action("create", "projects", new { Area = "Manage"})" class="btn btn-success">Create new Project</a>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Customer</th>
+                    <th>Web</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+
+            <tbody style="background-color: lavender;">
+                @foreach (var items in Model)
+                {
+                    <tr>
+                        <td>
+                            @(sira++)
+                        </td>
+                        <td>
+                            <img width="100" src="~/Upload/@items.Photos.FirstOrDefault().PhotoName" />
+                        </td>
+                        <td>
+                            @items.Name
+                        </td>
+                        <td>
+                            @items.Customer
+                        </td>
+                        <td>
+                            @items.Web
+                        </td>
+                        <td>
+                            @items.Date.ToString("dd-MM-yyyy")
+                        </td>
+                        <td>
+                            @items.Description.Substring(0, 35)...
+                        </td>
+                        <td>
+                            <a href="@Url.Action("edit", "projects", new { Area = "Manage", Id = items.Id})" class="btn btn-info text-white edit">Edit</a>
+                            <a onclick="return confirm('Are you sure want to remove the selected one?')" href="@Url.Action("remove", "projects", new { id = items.Id, Area = "Manage" })" class="btn btn-danger text-white">Remove</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

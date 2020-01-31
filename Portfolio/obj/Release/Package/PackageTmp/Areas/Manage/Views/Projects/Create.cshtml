@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+<div class="page">
+    <div id="room">
+        <div class="header mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1><i class="fab fa-adobe"></i>Projects - Create</h1>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <a href="@Url.Action("index", "projects", new { Area = "Manage"})" class="btn btn-primary">Back to Projects page</a>
+                </div>
+            </div>
+        </div>
+
+        <form method="post" action="@Url.Action("create", "projects", new { Area = "Manage"})" enctype="multipart/form-data">
+
+            <div class="col-md-12 d-flex">
+                <div class="col-md-4">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="room-no"><b>Project Photo:</b></label>
+                            <input type="file" class="form-control" id="room-no" name="Photos" required multiple>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="room-no"><b>Name</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Name" required>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="room-no"><b>Customer</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Customer" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="#"><b>Category:</b></label>
+                            <div class="">
+                                <select class="form-control" id="Category" name="CategoryId" required>
+                                    <option value="">--Select Category</option>
+                                    @foreach (var category in ViewBag.Categories)
+                                    {
+                                        <option value="@category.Id" required>@category.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label><b>Web</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Web" required>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label><b>Date</b></label>
+                            <input type="date" class="form-control" id="room-no" name="Date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label><b>Description</b></label>
+                            <textarea class="form-control" id="ex" rows="7" placeholder="Write something here..." name="Description" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label><b>Technology #1</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Technologies" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label><b>Technology #2</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Technologies" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label><b>Technology #3</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Technologies" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label><b>Technology #4</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Technologies" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label><b>Technology #5</b></label>
+                            <input type="text" class="form-control" id="room-no" name="Technologies">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row col-md-9">
+                <div class="col-md-11 text-right">
+                    <button type="submit" class="btn btn-success" style="width: 150px; height: 50px;">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
